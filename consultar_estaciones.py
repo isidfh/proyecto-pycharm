@@ -1,13 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
-import pyodbc
-
-# Conexión a la base de datos
-def conectar():
-    db_path = r"C:\Proyectos Python\Access\bdCPD001\bdCPD001.accdb"  # Ajusta la ruta a tu base de datos
-    conn = pyodbc.connect(f"DRIVER={{Microsoft Access Driver (*.mdb, *.accdb)}};DBQ={db_path};")
-    cursor = conn.cursor()
-    return conn, cursor
+from db_connection import conectar
 
 # Consultar una estación por código
 def obtener_estacion_por_codigo():
